@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ayawen Asuinura | Airwallex Strategic Business Case</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-dark: #0b0e14;
+            --airwallex-blue: #0052ff;
+            --airwallex-orange: #ff5c00;
+            --bg-slate: #f8fafc;
+        }
+        body { 
+            font-family: 'Plus Jakarta Sans', sans-serif; 
+            background-color: var(--bg-slate);
+            color: var(--primary-dark);
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+        .header-spacing {
+            letter-spacing: 0.1em;
+            word-spacing: 0.25em;
+            text-transform: uppercase;
+        }
+        .reveal {
+            opacity: 1;
+            transform: translateY(0);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        @media (prefers-reduced-motion: no-preference) {
+            .reveal:not(.active) {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+        }
+        .reveal.active {
+            opacity: 1 !important;
+            transform: translateY(0) !important;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            height: 320px;
+        }
+        .stat-blob {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(0, 82, 255, 0.08) 0%, rgba(255, 255, 255, 0) 70%);
+            z-index: -1;
+            border-radius: 50%;
+        }
+        @media (min-width: 1024px) {
+            .dashboard-grid {
+                display: grid;
+                grid-template-columns: repeat(12, 1fr);
+                gap: 1.5rem;
+            }
+            .span-8 { grid-column: span 8; }
+            .span-4 { grid-column: span 4; }
+            .span-6 { grid-column: span 6; }
+            .span-12 { grid-column: span 12; }
+        }
+        .playbook-card {
+            transition: transform 0.3s ease;
+        }
+        .playbook-card:hover {
+            transform: translateY(-5px);
+        }
+        .company-logo {
+            width: 24px;
+            height: 24px;
+            object-fit: contain;
+            background: transparent;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Hero Header -->
+    <header class="bg-[#0b0e14] text-white pt-24 pb-52 px-6 relative overflow-hidden">
+        <div class="absolute inset-0 z-0 bg-cover bg-center opacity-25" 
+             style="background-image: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop');">
+        </div>
+        
+        <div class="stat-blob top-0 left-0 scale-150 opacity-50 z-0"></div>
+        
+        <div class="max-w-7xl mx-auto relative z-10 text-center">
+            <span class="reveal bg-blue-600/20 text-blue-400 px-4 py-1 rounded-full text-xs font-bold header-spacing mb-6 inline-block border border-blue-500/30">
+                Data-Driven Sales Development Strategy | EMEA SDR
+            </span>
+            <h1 class="reveal text-5xl md:text-7xl font-extrabold mb-8 tracking-tight">
+                Ayawen <span class="text-[#0052ff]">Asuinura</span>
+            </h1>
+            <p class="reveal text-xl md:text-2xl text-slate-400 max-w-4xl mx-auto font-light leading-relaxed">
+                I could have written a generic cover letter to tell you I am "passionate" and "driven" and a ✨team player✨...
+                <br><br>
+                ...Or I could go 3 steps further and show you exactly what you'll be getting with me.
+            </p>
+
+            <!-- Circular Photo Frame -->
+            <div class="reveal mt-16 flex justify-center">
+                <div class="w-64 h-64 md:w-72 md:h-72 rounded-full border-8 border-[#0052ff] overflow-hidden bg-slate-800 shadow-[0_20px_50px_rgba(0,82,255,0.3)] ring-4 ring-slate-900">
+                    <img src="https://www.dropbox.com/scl/fi/5b0d8ds8txkn6139h5za3/IMG_5924.jpeg?rlkey=hfctl19gnxbkn5qwv6hnw4lro&st=q0vleq7v&raw=1" alt="Ayawen Asuinura" class="w-full h-full object-cover" onerror="this.src='https://ui-avatars.com/api/?name=Ayawen+Asuinura&background=0b0e14&color=0052ff&size=256'">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-6 -mt-32 pb-24 space-y-24 relative z-20">
+        
+        <!-- SECTION 1: MARKET INTELLIGENCE -->
+        <div class="reveal dashboard-grid space-y-6 lg:space-y-0">
+            <div class="span-12 mb-6 text-center">
+                <h2 class="text-3xl font-black text-slate-900 header-spacing">EMEA Market Intelligence</h2>
+                <div class="h-1.5 w-24 bg-[#ff5c00] mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <!-- Core Stats -->
+            <div class="span-4 flex flex-col gap-6">
+                <div class="bg-white p-8 rounded-3xl shadow-xl border-b-4 border-[#0052ff]">
+                    <p class="text-slate-500 font-bold text-[10px] header-spacing mb-2 uppercase">B2B Payments Transaction Value (2030E)</p>
+                    <h3 class="text-4xl font-extrabold text-slate-900">$224T</h3>
+                    <p class="text-blue-600 text-sm mt-2 font-semibold italic">Global Transaction Volume</p>
+                    <p class="text-[10px] text-slate-400 mt-4 border-t pt-4">Source: <a href="https://www.juniperresearch.com/research/fintech-payments/core-payments/b2b-payments-research-report/" target="_blank" class="underline font-bold text-blue-600">Juniper Research</a></p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-3xl shadow-xl border-b-4 border-[#ff5c00]">
+                    <p class="text-slate-500 font-bold text-[10px] header-spacing mb-2 uppercase">MEA Growth Rate (CAGR)</p>
+                    <h3 class="text-4xl font-extrabold text-slate-900">9.3%</h3>
+                    <p class="text-orange-600 text-sm mt-2 font-semibold italic">Middle East and Africa</p>
+                    <p class="text-[10px] text-slate-400 mt-4 border-t pt-4">Source: <a href="https://www.bcg.com/publications/2025/global-payments-transformation-amid-instability" target="_blank" class="underline font-bold text-orange-600">BCG Payments Report</a></p>
+                </div>
+
+                <div class="bg-white p-8 rounded-3xl shadow-xl border-b-4 border-slate-900">
+                    <p class="text-slate-500 font-bold text-xs header-spacing mb-2 uppercase">Global B2B E-Commerce*</p>
+                    <h3 class="text-4xl font-extrabold text-slate-900">$10T</h3>
+                    <p class="text-slate-600 text-sm mt-2 font-semibold italic">120% Projection by 2030</p>
+                    <p class="text-[10px] text-slate-400 mt-4 border-t pt-4">*Source: <a href="https://www.ey.com/content/dam/ey-unified-site/ey-com/en-gl/industries/wealth-asset-management/documents/ey-gl-banking-beyond-borders-10-2024.pdf" target="_blank" class="underline font-bold text-blue-600">EY Beyond Borders</a></p>
+                </div>
+            </div>
+
+            <!-- MEA Focus -->
+            <div class="span-8 bg-white p-8 rounded-3xl shadow-xl border border-slate-100 flex flex-col">
+                <div class="flex flex-col md:flex-row justify-between items-start mb-6 gap-4">
+                    <div class="max-w-lg">
+                        <h4 class="text-2xl font-extrabold text-slate-900 mb-2">The MEA Growth Advantage</h4>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            While Europe holds the volume, <strong>Middle East & Africa is a critical growth frontier</strong> (9.3% CAGR). This is where my Emerging Markets knowledge bridges the friction of legacy systems.
+                        </p>
+                    </div>
+                    <div class="bg-orange-50 px-4 py-2 rounded-xl border border-orange-100">
+                        <span class="text-orange-700 text-[10px] font-black uppercase header-spacing">Region Growth Leader</span>
+                    </div>
+                </div>
+                <div class="chart-container flex-grow">
+                    <canvas id="meaGrowthChart"></canvas>
+                </div>
+                <p class="text-[10px] text-slate-400 mt-4 italic text-right">Source: <a href="https://www.bcg.com/publications/2025/global-payments-transformation-amid-instability" target="_blank" class="underline">BCG Global Payments Report</a></p>
+            </div>
+        </div>
+
+        <!-- SECTION 2: MACRO ECONOMIC CONTEXT -->
+        <div class="reveal bg-slate-900 text-white p-12 rounded-[3rem] shadow-2xl">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                <div class="space-y-12">
+                    <h4 class="text-xl font-bold text-[#ff5c00] header-spacing border-l-4 border-[#ff5c00] pl-6">Market Stimulants</h4>
+                    
+                    <div class="flex items-center gap-8 group">
+                        <div class="text-5xl opacity-80 group-hover:opacity-100 transition-opacity">🌍</div>
+                        <div>
+                            <h5 class="font-bold text-white text-lg header-spacing">AfCFTA Activation</h5>
+                            <p class="text-slate-400 text-sm mt-1">Driving massive intra-regional B2B flows via virtual account agility.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center gap-8 group">
+                        <div class="text-5xl opacity-80 group-hover:opacity-100 transition-opacity">🏗️</div>
+                        <div>
+                            <h5 class="font-bold text-white text-lg header-spacing">Belt & Road Init.</h5>
+                            <p class="text-slate-400 text-sm mt-1">Connecting MEA markets to high-volume global supply chains.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center gap-8 group">
+                        <div class="text-5xl opacity-80 group-hover:opacity-100 transition-opacity">⚡</div>
+                        <div>
+                            <h5 class="font-bold text-white text-lg header-spacing">EU Instant Payments</h5>
+                            <p class="text-slate-400 text-sm mt-1">Regulatory displacement of slow SWIFT rails in the Eurozone.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex flex-col justify-center">
+                    <h4 class="text-xl font-bold text-blue-400 header-spacing border-l-4 border-blue-400 pl-6 mb-8">Growth Headwinds</h4>
+                    <div class="bg-white/5 p-8 rounded-3xl border border-white/10 space-y-6">
+                        <p class="text-slate-200 text-lg leading-relaxed font-light">
+                            Protectionist policies—including <strong>Brexit</strong> and rising trade tensions—are actively slowing traditional growth corridors. 
+                        </p>
+                        <div class="p-6 bg-slate-800/50 rounded-2xl border border-slate-700">
+                            <p class="text-slate-300 text-sm italic leading-loose">
+                                "Most high-value B2B cross-border payments are still processed through slow, opaque Correspondent Banking Networks (CBNs). This creates a massive Churn Opportunity for transparent digital entrants."
+                            </p>
+                        </div>
+                        <p class="text-[10px] text-slate-500 uppercase tracking-widest text-left">Source: <a href="https://www.ey.com/en_uk/insights/banking-capital-markets/how-new-entrants-are-redefining-cross-border-payments" target="_blank" class="underline hover:text-blue-400">EY Strategic Insights</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 3: CANDIDATE EXPERIENCE (UMB) -->
+        <div class="reveal bg-white p-12 rounded-[3rem] shadow-xl border border-slate-100 overflow-hidden relative">
+            <div class="absolute -top-10 -right-10 p-8 text-slate-50 text-[12rem] font-black opacity-10 select-none">EMEA</div>
+            <div class="relative z-10 flex flex-col md:flex-row gap-16 items-center">
+                <div class="md:w-1/3 text-center md:text-left">
+                    <div class="w-24 h-24 bg-blue-600 rounded-[2rem] shadow-lg shadow-blue-200 flex items-center justify-center text-white text-4xl font-bold mb-8 mx-auto md:mx-0">U</div>
+                    <p class="text-blue-600 font-bold uppercase text-xs tracking-widest">Practical industry exposure</p>
+                </div>
+                <div class="md:w-2/3 space-y-8">
+                    <p class="text-slate-600 leading-relaxed text-xl font-light">
+                        During <strong>a previous internship with Universal Merchant Bank, a leading SME bank in West Africa</strong>, I supported the integration of **PAPSS** (Pan-African Payment and Settlement System) for regional cross-border settlements.
+                    </p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200 hover:bg-white transition-colors">
+                            <h5 class="font-bold text-slate-900 text-base mb-2 header-spacing">Digital Transformation</h5>
+                            <p class="text-sm text-slate-500">Actively supported the transition of legacy treasury rails to modern digital standards across regional corridors.</p>
+                        </div>
+                        <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200 hover:bg-white transition-colors">
+                            <h5 class="font-bold text-slate-900 text-base mb-2 header-spacing">Regional Compliance</h5>
+                            <p class="text-sm text-slate-500">Navigating multi-currency settlement complexities and cross-border logic in high-velocity emerging markets.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 4: SALES PLAYBOOK -->
+        <div class="reveal space-y-12">
+            <div class="text-center">
+                <h2 class="text-3xl font-black text-slate-900 header-spacing">My Sales Playbook Contribution</h2>
+                <p class="text-slate-500 mt-2">How I will convey Airwallex's value proposition to convert leads</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="playbook-card bg-white p-8 rounded-[2rem] border border-slate-100 shadow-lg text-center">
+                    <div class="text-5xl mb-6">⚙️</div>
+                    <h5 class="text-[#0052ff] font-bold mb-3 header-spacing">ISO 20022 Standard</h5>
+                    <p class="text-xs text-slate-500 leading-relaxed">Highlighting compliance with data-rich messaging for instant reconciliation across EMEA corridors.</p>
+                </div>
+                <div class="playbook-card bg-white p-8 rounded-[2rem] border border-slate-100 shadow-lg text-center">
+                    <div class="text-5xl mb-6">📉</div>
+                    <h5 class="text-[#ff5c00] font-bold mb-3 header-spacing">60% OpEx Savings</h5>
+                    <p class="text-xs text-slate-500 leading-relaxed">Quantifying reduction vs legacy banking. Faster settlement = optimized working capital.</p>
+                </div>
+                <div class="playbook-card bg-white p-8 rounded-[2rem] border border-slate-100 shadow-lg text-center">
+                    <div class="text-5xl mb-6">🛡️</div>
+                    <h5 class="text-[#0052ff] font-bold mb-3 header-spacing">$235B+ Trust</h5>
+                    <p class="text-xs text-slate-500 leading-relaxed">Leveraging immense annual volume to establish institutional trust during top-funnel outreach.</p>
+                </div>
+                <div class="playbook-card bg-white p-8 rounded-[2rem] border border-slate-100 shadow-lg text-center">
+                    <div class="text-5xl mb-6">🛰️</div>
+                    <h5 class="text-[#ff5c00] font-bold mb-3 header-spacing">Real-Time Tracker</h5>
+                    <p class="text-xs text-slate-500 leading-relaxed">Pitching proprietary fraud management and live payment tracking as standard value-adds.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 5: PIPELINE -->
+        <div class="reveal bg-white p-10 rounded-[3rem] shadow-xl border border-slate-200">
+            <div class="flex flex-col items-center mb-12 text-center">
+                <h4 class="text-2xl font-black text-slate-900 header-spacing mb-4 uppercase">Target Pipeline: EMEA Leads</h4>
+                <div class="px-5 py-3 bg-blue-50 text-blue-800 rounded-2xl text-xs font-bold italic leading-relaxed max-w-2xl">
+                    I've taken the liberty of identifying potential leads for Airwallex based on market research and my professional network.
+                </div>
+            </div>
+            <div class="overflow-x-auto">
+                <table class="w-full text-left text-sm border-collapse">
+                    <thead>
+                        <tr class="bg-slate-50 text-slate-400">
+                            <th class="p-6 font-bold header-spacing text-[10px] first:rounded-l-2xl last:rounded-r-2xl">Company</th>
+                            <th class="p-6 font-bold header-spacing text-[10px]">Strategic Reasoning</th>
+                            <th class="p-6 font-bold header-spacing text-[10px]">LinkedIn Contact</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-100">
+                        <tr>
+                            <td class="p-6 font-bold text-slate-900 flex items-center gap-3">
+                                <img src="https://logo.clearbit.com/monese.com" class="company-logo" onerror="this.style.display='none'">
+                                Monese (UK)
+                            </td>
+                            <td class="p-6 text-slate-500 leading-relaxed">Neobank requiring robust multi-currency payout infrastructure for global customer base.</td>
+                            <td class="p-6">
+                                <a href="https://www.linkedin.com/in/michiel-smet?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" class="text-blue-600 font-bold hover:underline">Michiel Smet</a>
+                                <span class="block text-[10px] text-slate-400 mt-1 uppercase font-bold">Head of Operations</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="p-6 font-bold text-slate-900 flex items-center gap-3">
+                                <img src="https://logo.clearbit.com/bolt.eu" class="company-logo" onerror="this.style.display='none'">
+                                Bolt (Estonia)
+                            </td>
+                            <td class="p-6 text-slate-500 leading-relaxed">Global mobility needing real-time driver payouts in MEA corridors.</td>
+                            <td class="p-6">
+                                <a href="https://www.linkedin.com/in/isabel-dzifa-a-1175a287?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" class="text-blue-600 font-bold hover:underline">Isabel Dzifa</a>
+                                <span class="block text-[10px] text-slate-400 mt-1 uppercase font-bold">Senior Technical Support</span>
+                                <div class="text-[9px] text-orange-500 font-black mt-2 uppercase tracking-tighter">★ Warm contact from alma mater</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="p-6 font-bold text-slate-900 flex items-center gap-3">
+                                <img src="https://logo.clearbit.com/checkout.com" class="company-logo" onerror="this.style.display='none'">
+                                Checkout.com (UK)
+                            </td>
+                            <td class="p-6 text-slate-500 leading-relaxed">Payment acquirer looking for settlement rail optimization to increase platform margins.</td>
+                            <td class="p-6">
+                                <a href="https://www.linkedin.com/in/raquel-gallardo-608b728b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" class="text-blue-600 font-bold hover:underline">Raquel Gallardo</a>
+                                <span class="block text-[10px] text-slate-400 mt-1 uppercase font-bold">Manager, Corporate Transformation</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="p-6 font-bold text-slate-900 flex items-center gap-3">
+                                <img src="https://logo.clearbit.com/jumia.com" class="company-logo" onerror="this.style.display='none'">
+                                Jumia (UAE/NG)
+                            </td>
+                            <td class="p-6 text-slate-500 leading-relaxed">MEA marketplace giant dealing with significant vendor payout friction across corridors.</td>
+                            <td class="p-6">
+                                <a href="https://www.linkedin.com/in/thibaultadeline?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" class="text-blue-600 font-bold hover:underline">Thibault Adeline</a>
+                                <span class="block text-[10px] text-slate-400 mt-1 uppercase font-bold">COO</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="p-6 font-bold text-slate-900 flex items-center gap-3">
+                                <img src="https://logo.clearbit.com/deliveryhero.com" class="company-logo" onerror="this.style.display='none'">
+                                Delivery Hero (DE)
+                            </td>
+                            <td class="p-6 text-slate-500 leading-relaxed">High-volume logistics requiring automated treasury APIs to manage global supplier networks.</td>
+                            <td class="p-6">
+                                <a href="https://www.linkedin.com/in/matthew-lewis-883559100?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" class="text-blue-600 font-bold hover:underline">Matthew Lewis</a>
+                                <span class="block text-[10px] text-slate-400 mt-1 uppercase font-bold">Senior Director, Ops</span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- TRANSITION TO ROI -->
+        <div class="reveal py-12 text-center">
+            <h2 class="text-4xl md:text-5xl font-black text-slate-900 header-spacing mb-6 uppercase">ROI of Bringing Me on Board</h2>
+            <div class="flex justify-center gap-4">
+                <div class="w-12 h-1 bg-blue-600 rounded-full"></div>
+                <div class="w-12 h-1 bg-orange-500 rounded-full"></div>
+                <div class="w-12 h-1 bg-blue-600 rounded-full"></div>
+            </div>
+        </div>
+
+        <!-- SECTION 6: ROI DASHBOARD -->
+        <div class="reveal dashboard-grid space-y-6 lg:space-y-0">
+            <div class="span-6 bg-white p-10 rounded-[3rem] shadow-xl border border-slate-100 flex flex-col">
+                <h4 class="text-xl font-bold mb-4 text-slate-900 header-spacing uppercase">Speed to Revenue</h4>
+                <div class="p-6 bg-slate-50 rounded-2xl mb-8 border border-slate-100">
+                    <p class="text-sm text-slate-600 leading-loose font-medium">
+                        <strong>The Advantage:</strong> Typical SDRs need 3 months to learn the ropes and execute plays. My VC and partnerships background ensures a qualified sales pipeline in <strong>Weeks 1-4</strong>.
+                    </p>
+                </div>
+                <div class="chart-container flex-grow"><canvas id="rampTimeChart"></canvas></div>
+                <!-- Legend and Source -->
+                <div class="mt-6 border-t pt-6">
+                    <div class="flex justify-center gap-8 mb-4">
+                        <div class="flex items-center gap-3">
+                            <div class="w-4 h-4 bg-[#e2e8f0] rounded-sm"></div>
+                            <span class="text-[11px] text-slate-500 font-bold uppercase">Standard SDR Ramp Time</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-4 h-4 bg-[#ff5c00] rounded-sm"></div>
+                            <span class="text-[11px] text-slate-500 font-bold uppercase">Ayawen Asuinura</span>
+                        </div>
+                    </div>
+                    <p class="text-[10px] text-center text-slate-400 uppercase tracking-widest font-black">Source: <a href="https://www.bridgegroupinc.com/thanks/lgmc?submissionGuid=52fddd90-b01d-453c-999d-c42890c6f79f" class="text-blue-600 underline" target="_blank">Bridge Group Report</a></p>
+                </div>
+            </div>
+
+            <div class="span-6 bg-white p-10 rounded-[3rem] shadow-xl border border-slate-100 flex flex-col">
+                <h4 class="text-xl font-bold mb-4 text-slate-900 header-spacing uppercase">Operational Alpha</h4>
+                <div class="p-6 bg-slate-50 rounded-2xl mb-8 border border-slate-100">
+                    <p class="text-sm text-slate-600 leading-loose font-medium">
+                        <strong>The Efficiency:</strong> By automating admin tasks via a data-driven stack, I spend half the time on admin tasks as the average SDR, and double the time spent on revenue-generating activities. For Airwallex, this translates to <strong>double the meetings</strong> per quarter.
+                    </p>
+                </div>
+                <div class="chart-container flex-grow"><canvas id="productivityChart"></canvas></div>
+                <!-- Legend and Source -->
+                <div class="mt-6 border-t pt-6">
+                    <div class="flex justify-center gap-8 mb-4">
+                        <div class="flex items-center gap-3">
+                            <div class="w-4 h-4 bg-[#f1f5f9] rounded-sm"></div>
+                            <span class="text-[11px] text-slate-500 font-bold uppercase">Admin Tasks</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-4 h-4 bg-[#0052ff] rounded-sm"></div>
+                            <span class="text-[11px] text-slate-500 font-bold uppercase">Revenue Generation</span>
+                        </div>
+                    </div>
+                    <p class="text-[10px] text-center text-slate-400 uppercase tracking-widest font-black">Source: <a href="https://salesso.com/blog/sdr-productivity-statistics/" class="text-blue-600 underline" target="_blank">Salesso Report</a></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- FOOTER CTA -->
+        <div class="reveal bg-gradient-to-br from-[#0052ff] to-[#0038b1] rounded-[4rem] p-16 md:p-24 text-white shadow-2xl relative overflow-hidden text-center">
+            <h2 class="text-4xl md:text-5xl font-black mb-10 italic leading-tight text-white uppercase">Don't take my word for it. <br>Schedule an interview and see for yourself.</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <a href="tel:07982362275" class="bg-white/10 hover:bg-white/20 p-8 rounded-3xl border border-white/10 transition-all flex flex-col items-center group">
+                    <span class="text-4xl mb-4 group-hover:scale-110 transition-transform">&#128222;</span>
+                    <span class="text-sm font-black header-spacing mb-2 opacity-70 uppercase">Direct Line</span>
+                    <span class="text-xl font-bold">07982362275</span>
+                </a>
+                <a href="mailto:ayawenr@gmail.com" class="bg-white/10 hover:bg-white/20 p-8 rounded-3xl border border-white/10 transition-all flex flex-col items-center group">
+                    <span class="text-4xl mb-4 group-hover:scale-110 transition-transform">&#9993;</span>
+                    <span class="text-sm font-black header-spacing mb-2 opacity-70 uppercase">Email</span>
+                    <span class="text-xl font-bold text-white">ayawenr@gmail.com</span>
+                </a>
+                <a href="https://www.linkedin.com/in/ayawen-asuinura-08416614b/" target="_blank" class="bg-white p-8 rounded-3xl shadow-xl flex flex-col items-center group transition-all">
+                    <div class="w-12 h-12 bg-[#0052ff] text-white rounded-xl flex items-center justify-center font-black text-2xl mb-4 group-hover:scale-110 transition-transform">in</div>
+                    <span class="text-sm font-black header-spacing mb-2 text-slate-400 uppercase">LinkedIn</span>
+                    <span class="text-xl font-bold text-slate-900 underline underline-offset-4">Ayawen Asuinura</span>
+                </a>
+            </div>
+        </div>
+
+    </main>
+
+    <script>
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+        });
+
+        function splitLabel(label) {
+            if (label.length <= 16) return label;
+            const words = label.split(' ');
+            const lines = [];
+            let current = words[0];
+            for (let i = 1; i < words.length; i++) {
+                if ((current + " " + words[i]).length <= 16) {
+                    current += " " + words[i];
+                } else {
+                    lines.push(current);
+                    current = words[i];
+                }
+            }
+            lines.push(current);
+            return lines;
+        }
+
+        const tooltipConfig = {
+            callbacks: {
+                title: function(items) {
+                    const label = items[0].chart.data.labels[items[0].dataIndex];
+                    return Array.isArray(label) ? label.join(' ') : label;
+                }
+            }
+        };
+
+        new Chart(document.getElementById('meaGrowthChart'), {
+            type: 'line',
+            data: {
+                labels: ['2024', '2025', '2026', '2027', '2028', '2029'],
+                datasets: [
+                    { 
+                        label: 'MEA Transaction Rev Growth (9% CAGR)', 
+                        data: [100, 109, 118.8, 129.5, 141.2, 153.9], 
+                        borderColor: '#ff5c00', 
+                        backgroundColor: 'rgba(255, 92, 0, 0.1)', 
+                        fill: true, 
+                        tension: 0.4 
+                    },
+                    { 
+                        label: 'Europe (Western) Transaction Rev Growth (4.3% CAGR)', 
+                        data: [100, 104.3, 108.8, 113.5, 118.3, 123.4], 
+                        borderColor: '#0052ff', 
+                        fill: false, 
+                        tension: 0.4 
+                    }
+                ]
+            },
+            options: { 
+                responsive: true, 
+                maintainAspectRatio: false, 
+                plugins: { 
+                    tooltip: tooltipConfig, 
+                    legend: { position: 'bottom', labels: { boxWidth: 12, font: { size: 10 } } } 
+                },
+                scales: {
+                    y: {
+                        ticks: {
+                            callback: function(value) { return value + '%'; }
+                        },
+                        title: { display: true, text: 'Normalized Growth (%)' }
+                    }
+                }
+            }
+        });
+
+        new Chart(document.getElementById('rampTimeChart'), {
+            type: 'bar',
+            data: {
+                labels: ['Standard SDR Ramp Time', 'Ayawen Asuinura'].map(splitLabel),
+                datasets: [{ data: [3.0, 0.9], backgroundColor: ['#e2e8f0', '#ff5c00'], borderRadius: 12, barThickness: 40 }]
+            },
+            options: { indexAxis: 'y', responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false }, tooltip: tooltipConfig } }
+        });
+
+        new Chart(document.getElementById('productivityChart'), {
+            type: 'bar',
+            data: {
+                labels: ['Standard SDR', 'Ayawen Asuinura'].map(splitLabel),
+                datasets: [
+                    { label: 'Admin Tasks', data: [60, 30], backgroundColor: '#f1f5f9' },
+                    { label: 'Revenue Generation', data: [40, 70], backgroundColor: '#0052ff' }
+                ]
+            },
+            options: { indexAxis: 'y', responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false }, tooltip: tooltipConfig }, scales: { x: { stacked: true, max: 100 } } }
+        });
+    </script>
+</body>
+</html>
